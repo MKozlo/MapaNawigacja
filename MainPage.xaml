@@ -1,0 +1,36 @@
+﻿<Page
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:MapaNawigacja"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:Custom="using:Windows.UI.Xaml.Controls.Maps"
+    x:Class="MapaNawigacja.MainPage"
+    mc:Ignorable="d"
+    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="auto" />
+            <RowDefinition Height="*" />
+            <RowDefinition Height="auto" />
+        </Grid.RowDefinitions>
+
+        <StackPanel Grid.Row="0" Margin="10">
+            <TextBlock Text="NAWIGATOR" Style="{ThemeResource BaseTextBlockStyle}" />
+            <TextBlock Text="mapa" Style="{ThemeResource BaseTextBlockStyle}" />
+        </StackPanel>
+
+        <Custom:MapControl Grid.Row="1" x:Name="mojaMapa" MapServiceToken="rY2m5f34jtLrPZ51nXJA~m3m1fAKcXPu5sQT0y5sARw~AuUoXa3t2oZpvHl0iEMbnhD2ur3i8cVVK2cSWh-onyJdTPktHQ-prcvqll8jHX3g" />
+
+        <StackPanel Orientation="Horizontal" Grid.Row="2" HorizontalAlignment="Right">
+            <AppBarButton Label="powiększ" Icon="Add" Click="powMape"/>
+            <AppBarButton Label="pomniejsz" Icon="Remove" Click="pomMape"/>
+            <AppBarButton Label="satelita" Click="trybMapy">
+                <FontIcon FontFamily="auto" Glyph="S"/>
+            </AppBarButton>
+            <AppBarButton Label="koordynaty" Icon="Globe" Click="koordynaty"/>
+        </StackPanel>
+
+    </Grid>
+</Page>
